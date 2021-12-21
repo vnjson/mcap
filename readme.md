@@ -1,4 +1,4 @@
-
+22
 # Установка
 0. Установить [__`nodejs`__](https://nodejs.org/ru/)
 1. Скачать этот репозиторий [__`mcap.zip`__](https://github.com/vnjson/mcap/archive/refs/heads/main.zip)
