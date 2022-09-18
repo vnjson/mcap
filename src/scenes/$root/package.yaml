@@ -1,5 +1,6 @@
 debug: true
 font-family:  Minecraft # Consolas
+scale: 1
 
 dialog-box:
   delay: 20
