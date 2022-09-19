@@ -1,4 +1,7 @@
 port: 9000
+updateSrc: 
+  url: https://github.com/vnjson/mcap/archive/refs/heads/main.zip
+  dir: mcap-main
 src: src
 updateDirs:
   - src
