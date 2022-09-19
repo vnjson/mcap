@@ -13,8 +13,10 @@ export default function (args){
 
     query(str)
         .then((res) => {
-            res.data = JSON.parse(res.data);
             console.log(res);
+            if(res.data!==""){
+                res.data = JSON.parse(res.data);
+            }
             vnjs.store.MINECRAFT = vnjs.store.MINECRAFT || {};
             vnjs.store.MINECRAFT.TYPE = args.request;
             vnjs.store.MINECRAFT[args.request] = res;

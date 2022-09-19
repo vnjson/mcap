@@ -3,6 +3,10 @@ import * as blockController from "./block-controller";
 import mcGetCardItem from "./controllers/mc-get-card-item.js";
 import mcGetCardSlot from "./controllers/mc-get-card-slot.js";
 import mcGetCardInfo from './controllers/mc-get-card-info.js';
+import mcGetMessage from './controllers/mc-get-message.js';
+import mcGetWeather from './controllers/mc-get-weather.js';
+import mcGetDate from './controllers/mc-get-date.js';
+import mcGetTime from './controllers/mc-get-time.js';
 
 export default function () {}
 /**
@@ -63,3 +67,10 @@ vnjs.on('mc-get-player-nbt', blockController.mcGetPlayerNBT);
 vnjs.on('mc-get-card-item', mcGetCardItem);
 vnjs.on('mc-get-card', mcGetCardSlot);
 vnjs.on('mc-get-card-info', mcGetCardInfo); // доступ из новеллы к карточкам описаным в файле $root/mtcs.yaml
+/**
+ * WORLD
+ */
+vnjs.on('mc-get-message', mcGetMessage);
+vnjs.on('mc-get-weather', mcGetWeather);
+vnjs.on('mc-get-date', mcGetDate);
+vnjs.on('mc-get-time', mcGetTime);
