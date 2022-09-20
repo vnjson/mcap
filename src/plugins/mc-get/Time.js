@@ -1,83 +1,83 @@
 
 const controller = {
-    '===': (localtime, value, execData, mode) => {
-        if(mode==="localdate"){
-            let localdate = new Date(localtime * 100000).toLocaleDateString();
+    '===': (wordtime, value, execData, mode) => {
+        if(mode==="worddate"){
+            let worddate = new Date(wordtime * 100000).toLocaleDateString();
             let val = new Date(value * 100000).toLocaleDateString();
-            if(localdate === val){
+            if(worddate === val){
                 vnjs.exec(execData)
             }
             return;
         }
-        if(localtime===value){
+        if(wordtime===value){
             vnjs.exec(execData)
         }
     },
-    '>': (localtime, value, execData) => {
-        if(localtime>value){
+    '>': (wordtime, value, execData) => {
+        if(wordtime>value){
             vnjs.exec(execData)
         }
     },
-    '<': (localtime, value, execData) => {
-        if(localtime<value){
+    '<': (wordtime, value, execData) => {
+        if(wordtime<value){
             vnjs.exec(execData)
         }
     },
-    '!==': (localtime, value, execData, mode) => {
-        if(mode==="localdate"){
-            let localdate = new Date(localtime * 100000).toLocaleDateString();
+    '!==': (wordtime, value, execData, mode) => {
+        if(mode==="worddate"){
+            let worddate = new Date(wordtime * 100000).toLocaleDateString();
             let val = new Date(value * 100000).toLocaleDateString();
-            if(localdate !== val){
+            if(worddate !== val){
                 vnjs.exec(execData)
             }
             return;
         }
 
-        if(localtime!==value){
+        if(wordtime!==value){
             vnjs.exec(execData)
         }
     },
-    '<=': (localtime, value, execData, mode) => {
+    '<=': (wordtime, value, execData, mode) => {
         
-        if(mode === "localdate"){
-            let localdate = new Date(localtime * 100000).toLocaleDateString();
+        if(mode === "worddate"){
+            let worddate = new Date(wordtime * 100000).toLocaleDateString();
             let val = new Date(value * 100000).toLocaleDateString();
-            if(localdate === val){
+            if(worddate === val){
                 vnjs.exec(execData);
             }
-            else if(localtime < value){
+            else if(wordtime < value){
                 vnjs.exec(execData);
             }
             return;
         }
 
-        if(localtime<=value){
+        if(wordtime<=value){
             vnjs.exec(execData)
         }
     },
-    '>=': (localtime, value, execData, mode) => {
-        if(mode === "localdate"){
-            let localdate = new Date(localtime * 100000).toLocaleDateString();
+    '>=': (wordtime, value, execData, mode) => {
+        if(mode === "worddate"){
+            let worddate = new Date(wordtime * 100000).toLocaleDateString();
             let val = new Date(value * 100000).toLocaleDateString();
-            if(localdate === val){
+            if(worddate === val){
                 vnjs.exec(execData)
             }
-            else if(localtime > value){
+            else if(wordtime > value){
                 vnjs.exec(execData)
             }
             return;
         }
-        if(localtime>=value){
+        if(wordtime>=value){
             vnjs.exec(execData)
         }
     },
-    '[]': (localtime, value, execData) => {
-        if( value[0] <= localtime && localtime <= value[1]){
+    '[]': (wordtime, value, execData) => {
+        if( value[0] <= wordtime && wordtime <= value[1]){
             vnjs.exec(execData)
         }
     },
-    '][': (localtime, value, execData) => {
-        if(localtime < value[0] || localtime > value[1]){
+    '][': (wordtime, value, execData) => {
+        if(wordtime < value[0] || wordtime > value[1]){
             vnjs.exec(execData)
         }
     }
@@ -143,13 +143,13 @@ class Time {
             if (this.OPERATOR.includes("\\")) {
                 this.OPERATOR = this.OPERATOR.replaceAll("\\", "");
             }
-            console.log(this.OPERATOR)
+
           
             const [ key, val ] = this.equal.split(this.OPERATOR);
-            if(this.mode==='localdate'){
+            if(this.mode==='worddate'){
                 this.dateEval(val)
             }
-            if(this.mode==='localtime'){
+            if(this.mode==='wordtime'){
                 this.timeEval(val)
             }
 
@@ -169,14 +169,14 @@ class Time {
             }
  
             const execData = this.PLUGIN_DATA[this.equal];
-            controller[this.OPERATOR](this.localtime, this.value, execData)
+            controller[this.OPERATOR](this.wordtime, this.value, execData)
     }
-    get localtime (){
-        console.log(this.#wordTime)
+    get wordtime (){
+     
         const [ hh, mm ] = this.#wordTime.split("-");
         return  Number(hh+mm);
     }
-    set localtime (val){
+    set wordtime (val){
         this.#wordTime = val;
     }
     dateEval (val){
@@ -184,26 +184,29 @@ class Time {
              * Определяем диапазон ли лежит в значении
              */
             if(val.includes('--')){
-                this.value = val.split('--').map( (item) => {
-                    return this.transformDate( item.trim() );
-                });
+                    this.value = val.split('--').map( (item) => {
+                        return this.transformDate( item.trim() )
+                    });
             }
             else{
                 this.value = this.transformDate( val.trim() );
             }
- 
+
             const execData = this.PLUGIN_DATA[this.equal];
-            controller[this.OPERATOR](this.localdate, this.value, execData, this.mode);
+            controller[this.OPERATOR](this.worddate, this.value, execData, this.mode);
     }
-    get localdate (){
-        return this.transformDate();
+    get worddate (){
+        const [ yyyy, mm, dd ] = this.#wordDate.split("-");
+        return  Number(yyyy+ mm+ dd);
+        //const d = this.#wordDate.split()
+        //return // this.transformDate();
     }
-    set localdate (val){
+    set worddate (val){
         this.#wordDate = val
     }
     transformDate (date){
-        let _date = new Date(this.#wordDate);
-        return Math.ceil( _date.getTime() / 100000 );
+        const [ yyyy, mm, dd ] = date.split("-");
+        return  Number(yyyy+ mm+ dd);
     }
 
 }

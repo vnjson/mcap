@@ -24,3 +24,10 @@
         $: L + U + A
     "default":
         $: D.E.F.A.U.L.T
+
+- mc-get-message:
+    owner: "[Spell-" # можно указывать фрагменты owner [Spell-7]
+    "test":
+        $: T+E+S+T
+    "default":
+        $: D.E.F.A.U.L.T
