@@ -13,9 +13,8 @@ export default function (args){
     messages.forEach( (msg) => {
         //console.log(msg)
         for(let key in args){
-            
-            console.log(msg, key, msg.includes(key))
-            if( msg.includes(args.owner) && msg.includes(key) && key !== 'owner'){
+
+            if(msg.split(' ')[0].includes(args.owner) && msg.includes(key) && key !== 'owner'){
                 flag = true;
                 vnjs.exec(args[key]);
             }

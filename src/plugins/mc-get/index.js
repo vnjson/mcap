@@ -7,6 +7,8 @@ import mcGetMessage from './controllers/mc-get-message.js';
 import mcGetWeather from './controllers/mc-get-weather.js';
 import mcGetDate from './controllers/mc-get-date.js';
 import mcGetTime from './controllers/mc-get-time.js';
+import mcGetPrintPos from './controllers/mc-get-print-pos.js';
+import mcGetPrintLabel from './controllers/mc-get-print-label.js';
 
 export default function () {}
 /**
@@ -74,3 +76,8 @@ vnjs.on('mc-get-message', mcGetMessage);
 vnjs.on('mc-get-weather', mcGetWeather);
 vnjs.on('mc-get-date', mcGetDate);
 vnjs.on('mc-get-time', mcGetTime);
+/**
+ * Printer
+ */
+vnjs.on('mc-get-print-pos', mcGetPrintPos);
+vnjs.on('mc-get-print-label', mcGetPrintLabel);
