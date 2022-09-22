@@ -27,7 +27,7 @@ main-menu:
 discord-log:
   webhook: https://discord.com/api/webhooks/995314212500938789/C4ul6cKMwYadYYaOCSyla_dlwDVd1IPSZu0wb24l9kkjo971QCfdHolkEPrExR2KcpzO
 
-url_db: http://vnjson.mcap.fun/reindexer/api/v1/db/mcap_vnjson_store
+url-db: http://vnjson.mcap.fun/reindexer/api/v1/db/mcap_vnjson_store
 # console-port: 8082
 # chess: false
 paint-board: true

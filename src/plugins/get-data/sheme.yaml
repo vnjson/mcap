@@ -20,7 +20,7 @@
 # Получить данные из базы данных
 #######################################################################
 # $root/pacakge.yaml
-# url_db: http://vnjson.mcap.fun/reindexer/api/v1/db/mcap_vnjson_store
+# url-db: http://vnjson.mcap.fun/reindexer/api/v1/db/mcap_vnjson_store
 #######################################################################
 
 - get-data:

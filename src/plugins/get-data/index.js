@@ -1,10 +1,7 @@
 import { uuidv4, getRandom, formatURL } from './utils.js';
 
 
-export default function (){
-
-
-}
+export default function (){}
 
 vnjs.on('get-uuid', (varName) => {
     vnjs.state.data[varName] = uuidv4();
@@ -23,13 +20,12 @@ vnjs.on('get-data-rnd', (args) => {
 });
 
 vnjs.on('get-data', (args) => {
-    if(vnjs.package.url_db){
+    if(vnjs.package['url-db']){
         const id = vnjs.plugins.data.stringToData(args.id);
         const namespace = vnjs.plugins.data.stringToData(args.namespace);
 
         const query = `SELECT * FROM ${namespace} WHERE id = '${id}'`;
-        console.log(query)
-        const URL = formatURL(vnjs.package.url_db, query);
+        const URL = formatURL(vnjs.package['url-db'], query);
         fetch(URL)
             .then(r=>r.json())
             .then( (data) => {
