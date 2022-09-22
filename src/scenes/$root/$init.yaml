@@ -1,5 +1,6 @@
 - dialog-box: true
   data-clear: true
+  hands: true
   next: true
 
 

@@ -75,6 +75,9 @@ class Switch {
                 this.value = Number(val);
             }
             const execData = this.PLUGIN_DATA[this.equal];
+            if(typeof this.dataValue==='string'){
+                this.value = String(this.value)
+            }
             controller[this.OPERATOR](this.dataValue, this.value, execData);
         }
     }

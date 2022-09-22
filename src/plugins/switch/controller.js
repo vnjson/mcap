@@ -1,5 +1,6 @@
 export default {
     '===': (dataValue, value, execData) => {
+        console.log(dataValue, value)
         if(dataValue===value){
             vnjs.exec(execData)
         }

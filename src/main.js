@@ -58,6 +58,7 @@ import statusBarPush from './plugins/status-bar-push/index.js';
 import evalVnjson from './plugins/eval/index.js';
 import getLocalTime from './plugins/get-localtime/index.js';
 import intervalVnjson from './plugins/interval/index.js';
+import getData from './plugins/get-data/index.js';
 /**
  * Init plugins
  */
@@ -116,6 +117,7 @@ vnjs.use(statusBarPush);
 vnjs.use(evalVnjson);
 vnjs.use(getLocalTime);
 vnjs.use(intervalVnjson);
+vnjs.use(getData);
 /**
  * LOAD scenes
  */
