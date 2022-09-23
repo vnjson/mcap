@@ -9,6 +9,7 @@ import mcGetDate from './controllers/mc-get-date.js';
 import mcGetTime from './controllers/mc-get-time.js';
 import mcGetPrintPos from './controllers/mc-get-print-pos.js';
 import mcGetPrintLabel from './controllers/mc-get-print-label.js';
+import mcGetBiome from './controllers/mc-get-biome.js'
 
 export default function () {}
 /**
@@ -74,6 +75,7 @@ vnjs.on('mc-get-card-info', mcGetCardInfo); // доступ из новеллы 
  */
 vnjs.on('mc-get-chat', mcGetChat);
 vnjs.on('mc-get-weather', mcGetWeather);
+vnjs.on('mc-get-biome', mcGetBiome);
 vnjs.on('mc-get-date', mcGetDate);
 vnjs.on('mc-get-time', mcGetTime);
 /**

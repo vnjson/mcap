@@ -1,7 +1,7 @@
 /**
- * mc-get-weather
+ * mc-get-biome
  */
-export default function (args){
+ export default function (args){
     
     const { WORLD } = vnjs.store.MINECRAFT;
     if(!WORLD){
@@ -10,7 +10,7 @@ export default function (args){
     }
     let flag = false;
     for(let key in args){
-        if(key!=='default'&&key===WORLD.worldWeather){
+        if(key!=='default'&&key===WORLD.worldBiome){
             flag = true;
             vnjs.exec(args[key]);
         }

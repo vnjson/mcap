@@ -1,0 +1,13 @@
+- mc-get:
+    request: WORLD
+    slot: 0
+    pos: "0 0 0"
+  next: true
+
+- mc-get-weather:
+    "sun":
+      +: S_U_N
+    "rain":
+      +: ДОЖДЬ
+    "default":
+      +: D_E_F_A_U_L_T

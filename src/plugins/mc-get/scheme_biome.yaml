@@ -1,0 +1,11 @@
+- mc-get:
+    request: WORLD
+    slot: 0
+    pos: "0 0 0"
+  next: true
+
+- mc-get-biome:
+    "Taiga":
+      +: ТАЙГА
+    "default":
+      +: D_E_F_A_U_L_T
