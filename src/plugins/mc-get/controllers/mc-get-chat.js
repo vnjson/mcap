@@ -14,7 +14,7 @@ export default function (args){
         //console.log(msg)
         for(let key in args){
 
-            if(msg.split(' ')[0].includes(args.owner) && msg.includes(key) && key !== 'owner'){
+            if(msg.split(' ')[0].includes(args.prefix) && msg.includes(key) && key !== 'prefix'){
                 flag = true;
                 vnjs.exec(args[key]);
             }

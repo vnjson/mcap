@@ -3,7 +3,7 @@ import * as blockController from "./block-controller";
 import mcGetCardItem from "./controllers/mc-get-card-item.js";
 import mcGetCardSlot from "./controllers/mc-get-card-slot.js";
 import mcGetCardInfo from './controllers/mc-get-card-info.js';
-import mcGetMessage from './controllers/mc-get-message.js';
+import mcGetChat from './controllers/mc-get-chat.js';
 import mcGetWeather from './controllers/mc-get-weather.js';
 import mcGetDate from './controllers/mc-get-date.js';
 import mcGetTime from './controllers/mc-get-time.js';
@@ -72,7 +72,7 @@ vnjs.on('mc-get-card-info', mcGetCardInfo); // доступ из новеллы 
 /**
  * WORLD
  */
-vnjs.on('mc-get-message', mcGetMessage);
+vnjs.on('mc-get-chat', mcGetChat);
 vnjs.on('mc-get-weather', mcGetWeather);
 vnjs.on('mc-get-date', mcGetDate);
 vnjs.on('mc-get-time', mcGetTime);

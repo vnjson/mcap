@@ -1,7 +1,7 @@
 # получает историю сообщений из чата
 # и в зависимости от ключевого слова содержащегося в сообщении чата
 # выполняет определенные действия
-# так же должен быть задан параметр owner, в нём определяется
+# так же должен быть задан параметр prefix, в нём определяется
 # область видимости, где будет происходить поиск ключевого слова
 - mc-get:
     request: WORLD
@@ -9,8 +9,8 @@
     pos: "0 0 0"
   next: true
 
-- mc-get-message:
-    owner: "<mcap_serg>"
+- mc-get-chat:
+    prefix: "<mcap_serg>"
     "краб":
         +: К-Р-А-Б
     "белка":
@@ -18,15 +18,15 @@
     "default":
         $: D.E.F.A.U.L.T
 
-- mc-get-message:
-    owner: "[WoL]"
+- mc-get-chat:
+    prefix: "[WoL]"
     "Lua":
         $: L + U + A
     "default":
         $: D.E.F.A.U.L.T
 
-- mc-get-message:
-    owner: "[Spell-" # можно указывать фрагменты owner [Spell-7]
+- mc-get-chat:
+    prefix: "[Spell-" # можно указывать фрагменты prefix [Spell-7]
     "test":
         $: T+E+S+T
     "default":
