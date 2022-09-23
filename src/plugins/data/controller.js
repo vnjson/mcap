@@ -99,8 +99,8 @@ class Controller {
         }
     }
     stringToData(reply) {
-        let _newReply = reply;
-        const variables = reply.match(/{{.+?}}/g);
+        let _newReply = String(reply);
+        const variables = String(reply).match(/{{.+?}}/g);
         if (!variables) return _newReply;
         variables.forEach((varItem) => {
             const dataKey = varItem.replaceAll("{{", "").replaceAll("}}", "").trim();

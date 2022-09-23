@@ -9,7 +9,8 @@ import mcGetDate from './controllers/mc-get-date.js';
 import mcGetTime from './controllers/mc-get-time.js';
 import mcGetPrintPos from './controllers/mc-get-print-pos.js';
 import mcGetPrintLabel from './controllers/mc-get-print-label.js';
-import mcGetBiome from './controllers/mc-get-biome.js'
+import mcGetBiome from './controllers/mc-get-biome.js';
+import webModem from './controllers/web-modem.js';
 
 export default function () {}
 /**
@@ -83,3 +84,7 @@ vnjs.on('mc-get-time', mcGetTime);
  */
 vnjs.on('mc-get-print-pos', mcGetPrintPos);
 vnjs.on('mc-get-print-label', mcGetPrintLabel);
+/**
+ * modem
+ */
+vnjs.on('web-modem', webModem);
