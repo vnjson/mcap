@@ -25,19 +25,16 @@
 <html>
     <head>
         <title>CraftOS-PC WebSocket Client</title>
-        <script>const ip = "ws://127.0.0.1:9001";</script>
+
         <meta charset="utf-8">
         <style>
             *{
                 box-sizing: border-box;
             }
             html, body{
-                padding: 0;
                 margin: 0;
-                width: 256px;
-                height: 350px;
+                padding: 0;
             }
-            
             #textmode {
                 font-family: 'Courier New', Courier, monospace;
             }
@@ -228,6 +225,7 @@
             };
         </script>
         <script>
+
             var makeCRCTable = function(){
                 var c;
                 var crcTable = [];
@@ -605,7 +603,14 @@
                 blink = !blink;
                 if (lastterm && lastterm.blink) render(lastterm);
             }, 400);
-            connect(ip);
+            window.addEventListener("message", function (event){
+            let URL = event.data
+            const ip = "ws://127.0.0.1:9001";
+            connect(URL||ip);
+  
+        })
+       
+           
         </script>
     </body>
 </html>

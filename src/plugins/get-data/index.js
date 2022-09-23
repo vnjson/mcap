@@ -29,13 +29,12 @@ vnjs.on('get-data', (args) => {
         fetch(URL)
             .then(r=>r.json())
             .then( (data) => {
-                vnjs.state.data[args.value] = data.items[0].value
+                vnjs.state.data[args.value] = data.items[0].value;
             })
             .catch(err => console.error(err));
-  
     }
     else{
-        vnjs.emit('vnjson:error', 'В файле $root/package.yaml должно быть свойство url_db')
+        vnjs.emit('vnjson:error', 'В файле $root/package.yaml должно быть свойство url_db');
     }
 })
 

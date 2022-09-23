@@ -19,11 +19,13 @@ publish:
 menu:
   audio: menu-item
   volume: 0.1
-  
+
+
 main-menu:
   audio: menu-item
   volume: 0.1
-  
+
+
 discord-log:
   webhook: https://discord.com/api/webhooks/995314212500938789/C4ul6cKMwYadYYaOCSyla_dlwDVd1IPSZu0wb24l9kkjo971QCfdHolkEPrExR2KcpzO
 
@@ -34,3 +36,5 @@ paint-board: true
 # crossword: false
 
 push: menu-item
+
+craft-os: ws://127.0.0.1:9001

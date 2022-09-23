@@ -1,0 +1,10 @@
+# require ./static/data/cctweb.html
+
+- craft-os: true
+
+- craft-os: false
+
+############
+# В файле package.yaml необходимо дописать параметр 
+# craft-os: ws://127.0.0.1:9001
+############
