@@ -1,6 +1,9 @@
 /**
  * mc-get-message
  */
+const excludeProps = ['prefix', 'last'];
+let flag = false;
+
 export default function (args){
 
 
@@ -9,19 +12,40 @@ export default function (args){
         vnjs.emit('vnjson.error', "Необходимо вызвать mc-get - request: WORLD")
     }
     const messages = JSON.parse(WORLD.chatHistory);
-    let flag = false;
-    messages.forEach( (msg) => {
-        //console.log(msg)
-        for(let key in args){
 
-            if(msg.split(' ')[0].includes(args.prefix) && msg.includes(key) && key !== 'prefix'){
-                flag = true;
-                vnjs.exec(args[key]);
-            }
-        }
-    })
+    if(args.last){
+        messageHandler(messages[0], args)
+    }
+    else{
+        /**
+         * last = false
+         */
+        messages.forEach( (msg) => {
+            messageHandler(msg, args)
+        })
+    }
+
     if(!flag){
         vnjs.exec(args.default)
     }
 
+}
+
+function messageHandler (msg, args){
+            //console.log(msg)
+            for(let key in args){
+                if(args.prefix){
+                    if(msg.split(' ')[0].includes(args.prefix) && msg.includes(key) && !excludeProps.includes(key)){
+                        flag = true;
+                        vnjs.exec(args[key]);
+                    }
+                }
+                else{
+                    if(msg.includes(key) && !excludeProps.includes(key)){
+                        flag = true;
+                        vnjs.exec(args[key]);
+                    }
+                }
+
+            }
 }
