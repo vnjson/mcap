@@ -149,7 +149,9 @@
   border-radius: 4px;
   padding: 10px;
   min-height: 60px;
-  display: flex;
+  max-height: 147px;
+  overflow: hidden;
+  margin-bottom: 10px;
   align-items: center;
   line-height: 22px;
 }
