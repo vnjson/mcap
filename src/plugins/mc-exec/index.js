@@ -25,9 +25,9 @@ function getTime (){
 export default function (){
 
   vnjs.on('mc-exec', param => {
-
+      const _data = vnjs.plugins.data.stringToData(param.data);
       const data = {
-        "data": param.data,
+        "data": _data,
         "action": param.action,
         "uuid": "",
         "type": param.type,

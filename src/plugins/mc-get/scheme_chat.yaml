@@ -24,7 +24,7 @@
 # то поиск производится только в крайнем сообщении
 - mc-get-chat:
     last: true # false
-    prefix: "<mcap_serg>" 
+    prefix: "<mcap_serg>"
     "краб":
         +: К-Р-А-Б
     "papa":

@@ -11,6 +11,7 @@ import mcGetPrintPos from './controllers/mc-get-print-pos.js';
 import mcGetPrintLabel from './controllers/mc-get-print-label.js';
 import mcGetBiome from './controllers/mc-get-biome.js';
 import webModem from './controllers/web-modem.js';
+import mcGetEntity from "./controllers/mc-get-entity.js";
 
 export default function () {}
 /**
@@ -88,3 +89,7 @@ vnjs.on('mc-get-print-label', mcGetPrintLabel);
  * modem
  */
 vnjs.on('web-modem', webModem);
+/**
+ * entity
+ */
+vnjs.on('mc-get-entity', mcGetEntity);

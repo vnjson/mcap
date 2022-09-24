@@ -1,0 +1,23 @@
+
+- mc-get:
+    request: ENTITY
+    slot: 0
+    pos: "273 73 155"
+  next: true
+
+
+- mc-get-entity:
+    pos: pos 
+    name: name
+    type: type
+    alive: alive
+    health: health
+    invisible: invisible
+  next: true
+
+- $: "pos = {{pos}} <br> 
+     name = {{name}} <br>
+     type = {{type}} <br>
+     alive = {{alive}} <br>
+     health = {{health}} <br>
+     invisible = {{invisible}}"

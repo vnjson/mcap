@@ -10,7 +10,6 @@ export default function (args){
         data: "",
     };
     const str = `GET_${JSON.stringify(data)}`;
-
     query(str)
         .then((res) => {
             console.log(res);
@@ -42,6 +41,10 @@ function query(request) {
                     resolve(JSON.parse(response));
                 },
                 onFailure: (errCode, errMsg) => {
+                    vnjs.emit('error', {
+                        ru: 'Неверные параметры',
+                        en: 'Invalid params'
+                    }, jsyaml.dump(request))
                     reject(JSON.parse(errMsg));
                 },
             });
