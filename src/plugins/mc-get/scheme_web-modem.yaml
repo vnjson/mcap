@@ -1,0 +1,11 @@
+# В файл $root/package.yaml
+# необходимо дописать свойство web-modem: http://localhost:60000/
+#################################################################################
+
+
+- web-modem:
+    id: 0 # computer_craft id
+    path: player # pathname
+    args:
+      id: 4815162342
+      name: mcap_serg
