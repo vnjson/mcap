@@ -1,0 +1,5 @@
+
+# $root/package.yaml | mc-cct: http://localhost:5000/
+
+- mc-cct: true
+- mc-cct: false
