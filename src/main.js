@@ -60,6 +60,7 @@ import getLocalTime from './plugins/get-localtime/index.js';
 import intervalVnjson from './plugins/interval/index.js';
 import getData from './plugins/get-data/index.js';
 import craftOS from './plugins/craft-os/index.js';
+import craftOSCC from './plugins/craft-os-cc/index.js';
 /**
  * Init plugins
  */
@@ -120,6 +121,7 @@ vnjs.use(getLocalTime);
 vnjs.use(intervalVnjson);
 vnjs.use(getData);
 vnjs.use(craftOS);
+vnjs.use(craftOSCC);
 /**
  * LOAD scenes
  */
