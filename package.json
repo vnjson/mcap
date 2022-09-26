@@ -1,6 +1,6 @@
 {
   "name": "vnjson",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Visual Novel Engine",
   "main": "rollup.config.js",
   "scripts": {

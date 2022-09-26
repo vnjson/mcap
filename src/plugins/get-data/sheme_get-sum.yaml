@@ -1,0 +1,28 @@
+- data-set:
+    n: 85
+    next: true
+    
+- get-sum:
+    sum: sum_1
+    values: 
+      - 5
+      - 10
+      - "{{ n }}"
+
+- $: "sum: {{sum_1}}"
+
+
+##########################
+
+- data-set:
+    s: штиблет
+  next: true
+
+- get-str:
+    str: sum_2
+    values: 
+      - Привет
+      - от старых
+      - "{{ s }}"
+
+- $: "str: {{sum_2}}"

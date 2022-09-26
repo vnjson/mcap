@@ -37,6 +37,6 @@ paint-board: true
 
 push: menu-item
 
-craft-os: ws://127.0.0.1:9001
+#craft-os: ws://127.0.0.1:9001
 web-modem: http://localhost:60000/
 mc-cct: http://localhost:5000/

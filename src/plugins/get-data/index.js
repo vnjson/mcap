@@ -38,3 +38,26 @@ vnjs.on('get-data', (args) => {
     }
 })
 
+
+vnjs.on('get-sum', (args) => {
+    let sum = 0;
+
+    args.values.forEach( (item) => {
+        const _item = Number( vnjs.plugins.data.stringToData(item) );
+        sum = sum + _item;
+    });
+
+    vnjs.state.data[args.sum] = sum;
+})
+
+
+vnjs.on('get-str', (args) => {
+    let sum = "";
+
+    args.values.forEach( (item) => {
+        const _item = vnjs.plugins.data.stringToData(item).trim();
+        sum = sum + _item +" ";
+    });
+
+    vnjs.state.data[args.str] = sum.trim();
+})
