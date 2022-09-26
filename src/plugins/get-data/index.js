@@ -7,7 +7,7 @@ vnjs.on('get-uuid', (varName) => {
     vnjs.state.data[varName] = uuidv4();
 });
 
-vnjs.on('get-data-rnd', (args) => {
+vnjs.on('get-rnd', (args) => {
     const rnd = getRandom(args.min, args.max);
     if(args.list){
 
